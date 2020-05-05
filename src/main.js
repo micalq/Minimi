@@ -21,12 +21,12 @@ axios.defaults.baseURL="/api"//默认请求地址
 axios.defaults.timeout=8000//默认超时时间
 axios.interceptors.response.use((response)=>{//接口错误拦截
   let res=response.data;
-  if(res.data==0){
+  if(res.status==0){
     return res.data//成功
-  }else if (res.data==10) {//未登录
+  }else if (res.status==10) {//未登录
       window.location.href="/#/login"//不可以用$router.push
   }else{
-    alert(res.msg)
+  console.log(res.msg);
   }
 })
 new Vue({

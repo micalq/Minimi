@@ -1,0 +1,14 @@
+//写入公共样式
+@mixin flex ($hov:space-between,$col:center){  //flex
+    display: flex;
+      justify-content: $hov;
+      align-items: $col;
+}
+@mixin bgImg($w:0,$h:0,$url:'',$size:contain) {
+  display: inline-block;
+  width: $w;
+  height: $h;
+  background: url($url) no-repeat  50%;
+  // 把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。
+  background-size: $size;
+}

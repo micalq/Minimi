@@ -21,13 +21,13 @@ export default {
        /*  this.axios.get("/mock/user/login.json").then((res)=>{ //第一种方法mock本地加载请求
           this.res=res
         }) */
-        this.axios.get("/user/login").then((res)=>{
+       /*  this.axios.get("/user/login").then((res)=>{
           this.res=res
           console.log(res);
-        })
+        }) */
       },
 }
 </script>
 <style>
-
+@import "./assets/scss/reset.scss"
 </style>
