@@ -323,11 +323,13 @@ export default {
         }}) */
     // console.log(1);
       this.axios.get("/products",{params:{
-        categoryId:"100012"
+        categoryId:"100012",
+        pageSize:6,
       }}).then((res)=>{
-        if (res.list.length>6) {
+       /*  if (res.list.length>6) {
             this.phoneList=res.list.slice(0,6)//截取6条数据
-        }
+        } */
+        this.phoneList=res.list;
       // console.log(res.list);
       })
     },
@@ -439,7 +441,7 @@ export default {
               box-shadow: 0 7px 6px 0 rgba(0,0,0,.11);
               font-size: 12px;
               line-height: 12px;
-              // background-color: #fff;
+              background-color: #fff;
               z-index: 2;
               height: 0px;//不加高度阴影重叠
               // opacity: 0;//默认隐藏下拉菜单
