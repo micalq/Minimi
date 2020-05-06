@@ -36,7 +36,7 @@
                       <li class="nav-img" v-for="(item) in phoneList" :key="item.id">
                         <a :href="'/#/product/'+item.id" target="_blank">
                           <div class="pro-img">
-                            <img :src="item.mainImage" :alt="item.subtitle">
+                            <img v-lazy="item.mainImage" :alt="item.subtitle">
                           </div>
                           <div class="pro-name">{{item.name}}</div>
                           <div class="pro-price">{{item.price|money}}</div>
@@ -51,7 +51,7 @@
                       <li class="nav-img">
                         <a href="" target="_blank">
                           <div class="pro-img">
-                            <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1584946022.16048616.jpg" alt="">
+                            <img v-lazy="'https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1584946022.16048616.jpg'" alt="">
                           </div>
                           <div class="pro-name">Redmi K30 Pro</div>
                           <div class="pro-price">3399元</div>

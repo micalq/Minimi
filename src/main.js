@@ -4,6 +4,10 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueLazyload  from 'vue-lazyload'//图片懒加载
+Vue.use(VueLazyload ,{
+  loading:"/imgs/loading-svg/loading-bars.svg"
+})
 // import env from './env'
 Vue.config.productionTip = false  //开发模式默认关闭
 Vue.use(VueAxios,axios)//VueAxios前面 axios依赖VueAxios，安装其他插件的时候，可以直接在 main.js 中引入并使用 Vue.use()来注册，但是 axios并不是vue插件，所以不能 使用Vue.use()，所以只能在每个需要发送请求的组件中即时引入。

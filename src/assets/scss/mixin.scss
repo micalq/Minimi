@@ -20,3 +20,20 @@
   margin-right: $r;
   // background-size: $size;
 }
+@mixin position($p:absolute,$t:0,$l:0,$w:100%,$h:100%){
+  position: $p;
+  top: $t;
+  left: $l;
+  width: $w;
+  height: $h;
+ 
+}
+@mixin iconposi($p:absolute,$t:0,$r:0,$w:0,$h:0,$url:"") {
+  position: $p;
+  top: $t;
+  right: $r;
+  width: $w;
+  height: $h;
+  background: url($url) no-repeat  50%;
+  background-size: contain;
+}
