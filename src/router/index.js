@@ -10,6 +10,7 @@ import OrderConfirm from '../pages/orderConfirm.vue'
 import OrderList from '../pages/orderList.vue'
 import OrderPay from '../pages/orderPay.vue'
 import Alipay from '../pages/alipay.vue'
+import Login from '../pages/login.vue'
 Vue.use(VueRouter)
 const routes = [
       { path: '/', component: Home ,redirect: "/index",children:[
@@ -18,6 +19,7 @@ const routes = [
         { path: '/detail/:id', component: Detail },
       ]},
       { path: '/cart', component: Cart },
+      { path: '/login', component: Login },
       { path: '/order', component: Order,children:[
         {path:'Confirm',component:OrderConfirm},
         { path: 'list', component: OrderList },

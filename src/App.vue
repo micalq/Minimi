@@ -25,7 +25,21 @@ export default {
           this.res=res
           console.log(res);
         }) */
+        this.getUser()
+        this.getCartCount()
       },
+      methods: {
+        getUser(){//获取用户信息
+        this.axios.get("/user").then((res)=>{//把数据保存到vuex
+
+        })
+        },
+        getCartCount(){//获取购物车数量
+          this.axios.get("/carts/products/sum").then((res)=>{
+
+          })
+        }
+      }
 }
 </script>
 <style>

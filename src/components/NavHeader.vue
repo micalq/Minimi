@@ -367,6 +367,7 @@ export default {
         text-align: center;
         background-color: #f60;
         color: #fff;
+        margin-right: 0;
         .icon {
           @include bgImg(16px,12px,"../../public/imgs/icon-cart-checked.png");
           margin-right: 4px;
