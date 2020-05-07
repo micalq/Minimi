@@ -31,12 +31,12 @@ export default {
       methods: {
         getUser(){//获取用户信息
         this.axios.get("/user").then((res)=>{//把数据保存到vuex
-
+            this.$store.dispatch('saveUserName', res.username);//通过dispatch派发action
         })
         },
         getCartCount(){//获取购物车数量
           this.axios.get("/carts/products/sum").then((res)=>{
-
+            this.$store.dispatch("getCart",res)
           })
         }
       }
