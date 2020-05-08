@@ -6,6 +6,10 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueLazyload  from 'vue-lazyload'//图片懒加载
 import VueCookie from 'vue-cookie'//cookie
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)//全局使用ElementUI
+// Vue.prototype.$mes=Message;
 Vue.use(VueLazyload ,{
   loading:"/imgs/loading-svg/loading-bars.svg"
 })
@@ -36,7 +40,8 @@ axios.interceptors.response.use((response)=>{//接口错误拦截
     }
     return Promise.reject(res)
   }else{
-  alert(res.msg);
+  // alert(res.msg);
+  this.$message.warning(res.msg)
   return Promise.reject(res)
   }
 })

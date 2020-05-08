@@ -81,7 +81,8 @@ export default {
           email: "chen@123.cn"
         })
         .then(() => {
-          alert("注册成功了");
+          // alert("注册成功了");
+          this.$message.success("注册成功了")
         });
     }
   }

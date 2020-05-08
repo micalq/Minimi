@@ -136,7 +136,7 @@ export default {
           selected: true
         })
         .then((res = { cartProductVoList: 0 }) => {
-          this.$store.dispatch("getCart", cartTotalQuantity); //实时获取购物车数量
+          this.$store.dispatch("getCart", res.cartTotalQuantity); //实时获取购物车数量
           // console.log(res);
           this.$router.push("/cart"); //加入成功跳转购物车
         });
