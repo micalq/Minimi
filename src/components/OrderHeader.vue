@@ -7,18 +7,22 @@
              <div class="title fl">
                  <h2>{{title}} <slot name="tip"></slot></h2>
              </div>
-                  <div class="username fr"><a href="">陈小政</a></div>
+                  <div class="username fr"><a href="">{{username}}</a></div>
             </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import {  mapState} from "vuex";
 export default {
   name:"order-header",
   props:{
     title:String,//传参
-  }
+  },
+  computed: {
+    ...mapState(["username"])
+  },
 }
 </script>
 <style lang="scss" scoped>

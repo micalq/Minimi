@@ -76,9 +76,9 @@ export default {
     register() {      //注册
       this.axios
         .post("/user/register", {
-          username: "chen11",
+          username: "陈小政",
           password: "199711",
-          email: "chen@qq.cn"
+          email: "chen@123.cn"
         })
         .then(() => {
           alert("注册成功了");
