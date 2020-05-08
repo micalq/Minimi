@@ -394,31 +394,33 @@ export default {
    @include flex();//调用flex
       position: relative;
       .logo{//图标
-        display: inline-block;
-        width: 55px;
-        background-color: #f60;
-          a{
-            display:inline-block;
-            width: 110px;
-            &:before{
-              content: "";
-              @include bgImg(55px ,55px,"../../public/imgs/mi-logo.png",55px);
-             /*   width:55px;
-            height: 55px;
-              display:inline-block ;
-              background: url("../../public/imgs/mi-logo.png") no-repeat 50%;
-              background-size: 55px; */
-              transition: margin .2s;
-            }
-            &:after{
-              @include bgImg(55px ,55px,"../../public/imgs/mi-home.png",55px);
-                content: "";
-            }
-            &:hover::before{
-              margin-left: -110px;
-              transition: margin .2s;
-            }
-          }
+          // @include logo()
+
+  display: inline-block;
+  width: 55px;
+  background-color: #f60;
+    a{
+      display:inline-block;
+      width: 110px;
+      &:before{
+        content: "";
+        @include bgImg(55px ,55px,"../../public/imgs/mi-logo.png",55px);
+       /*   width:55px;
+      height: 55px;
+        display:inline-block ;
+        background: url("../../public/imgs/mi-logo.png") no-repeat 50%;
+        background-size: 55px; */
+        transition: margin .2s;
+      }
+      &:after{
+        @include bgImg(55px ,55px,"../../public/imgs/mi-home.png",55px);
+          content: "";
+      }
+      &:hover::before{
+        margin-left: -111px;
+        transition: margin .2s;
+      }
+ }
       }
       .menu{//文字菜单区
         display: inline-block;
