@@ -47,7 +47,9 @@
           <div v-swiper:mySwiper="swiperOption">
             <div class="swiper-wrapper">
               <div class="swiper-slide" :key="banner.id" v-for="banner in slideList">
+                <a :href="'/#/product/'+banner.id">
                 <img v-lazy="banner.img" />
+                </a>
               </div>
             </div>
             <div class="swiper-button-prev"></div>
@@ -80,7 +82,7 @@
           <h2>手机</h2>
           <div class="wraper">
             <div class="wraper-left">
-              <a href="'/#/product/35'">
+              <a :href="'/#/product/35'">
                 <img v-lazy="'/imgs/mix-alpha.jpg'" alt />
               </a>
             </div>
@@ -265,16 +267,18 @@ export default {
     },
     addCart(id) {
       //添加购物车
-      this.showModel = true;
-      return;
+      // return;
       this.axios
         .post("/carts", {
           productId: id,
           selected: true
         })
-        .then(() => {})
+        .then(() => {
+      this.showModel = true;
+      this.$store.dispatch('getCart', cartTotalQuantity)
+        })
         .catch(() => {
-          // this.showModel=true
+          this.showModel=true
         });
     },
     goToCart() {

@@ -31,9 +31,10 @@ axios.interceptors.response.use((response)=>{//接口错误拦截
   if(res.status==0){
     return res.data//成功
   }else if (res.status==10) {//未登录
-    if (path!=="#/index") {
+    if (path!="#/index") {
       window.location.href="/#/login"//不可以用$router.push,不在首页必须要登录
     }
+    return Promise.reject(res)
   }else{
   alert(res.msg);
   return Promise.reject(res)

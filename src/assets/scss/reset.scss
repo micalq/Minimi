@@ -27,3 +27,14 @@ input:focus,a:focus{
   margin-left: auto;
   margin-right: auto;
 }
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.clearfix:after ,.clearfix:before{
+  content: "";
+  display: block;
+  clear: both;
+}

@@ -2,7 +2,8 @@
   <div>
     <product-param :title="productInfo.name">
       <template slot="buy">
-        <a href class="btn" @click="toBuy">立即购买</a>
+        <!-- <a href="j"></a> -->
+        <a href="JavaScript:;" class="btn" @click="toBuy">立即购买</a>
       </template>
     </product-param>
     <div class="content">

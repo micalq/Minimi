@@ -35,7 +35,7 @@ export default {
         })
         },
         getCartCount(){//获取购物车数量
-          this.axios.get("/carts/products/sum").then((res)=>{
+          this.axios.get("/carts/products/sum").then((res=0)=>{//默认0
             this.$store.dispatch("getCart",res)
           })
         }
