@@ -145,6 +145,7 @@ export default {
       //删除购物车商品
       this.axios.delete(`/carts/${item.productId}`).then(res => {
         this.renderData(res);
+        this.$message.info("商品删除成功")
       });
     },
     order() {
