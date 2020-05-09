@@ -62,3 +62,33 @@
     }
   }
 }
+@mixin adress {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f60;
+  display: inline-block;
+  font-size: 15px;
+  a{
+    i{
+    font-size: 21px;
+  }}
+}
+@mixin deliver {
+  margin-top: 20px;
+              h2{
+                display: inline-block;
+              }
+              p{
+                display: inline-block;
+                margin-left: 100px;
+                color: #f60;
+              }
+}
+@mixin al {
+  background-size: 103px 38px;
+  width: 200px;
+  height: 60px;
+  border: 1px solid #d7d7d7;
+  cursor: pointer;
+  margin-top: 20px;
+}
