@@ -19,6 +19,7 @@
           <div class="nav-right">
             <a href="javascript:;" v-if="username">{{username}}</a>
             <a href="javascript:;" v-if="!username" @click="login">登录</a>
+            <a href="javascript:;" v-if="username" @click="quit">退出</a>
             <a href="javascript:;" v-if="username">我的订单</a>
             <a href="javascript:;" class="mycart" @click="goCart">
               <span class="icon"></span>购物车({{cartCount}})
@@ -299,6 +300,7 @@
 
 <script>
 import {  mapState} from 'vuex';
+import { mapActions } from "vuex";
 export default {
   name: "nav-header",
   data() {
@@ -324,6 +326,9 @@ export default {
   },
    mounted() {
       this.getPhoneList()
+      if (this.$route.params&&this.$route.params.from=="login") {//判断是否未登录防止重复调用接口
+        this.getCartCount()
+      }
     },
   methods: {
    getPhoneList(){//获取手机信息
@@ -346,10 +351,25 @@ export default {
     login(){//登录
     this.$router.push("/login")
     },
-    goCart(){
+    goCart(){//跳转到购物车
       this.$router.push("/cart")
-    }
-  },
+    },
+    quit(){//退出
+    this.axios.post("/user/logout").then((res)=>{
+      this.$message.success("退出成功了");
+      this.$cookie.set("userId",'',{expires:"-1"});//清空cookie
+      // this.$store.dispatch('username', "");
+      this.saveUserName("")//清空用户名
+      this.getCart("0")//清空购物车
+    })
+    },
+    ...mapActions(["saveUserName","getCart"]),
+    getCartCount(){//获取购物车数量
+          this.axios.get("/carts/products/sum").then((res=0)=>{//默认0
+            this.$store.dispatch("getCart",res)
+          })
+        }
+  }
 };
 </script>
 <style lang="scss" scoped>

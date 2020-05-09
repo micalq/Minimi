@@ -66,8 +66,14 @@ export default {
         .then(res => {
           // this.res=res;
           // console.log(res);
-          this.$cookie.set("userId", res.id, { expires: "1M" }); //设置cookie过期时间
-          this.$router.push("/index");
+          this.$cookie.set("userId", res.id, { expires: "Session" }); //设置cookie过期时间
+          // this.$router.push("/index");
+          this.$router.push({
+            name:"index",
+            params:{
+              from:"login"
+            }
+          })
           // this.$store.dispatch('saveUserName', res.username)
           this.saveUserName(res.username);
         });

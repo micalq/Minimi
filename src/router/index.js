@@ -14,7 +14,7 @@ import Login from '../pages/login.vue'
 Vue.use(VueRouter)
 const routes = [
       { path: '/', component: Home ,redirect: "/index",children:[
-        { path: '/index', component: Index },
+        { path: '/index', component: Index ,name:"index"},
         { path: '/product/:id', component: Product },
         { path: '/detail/:id', component: Detail },
       ]},

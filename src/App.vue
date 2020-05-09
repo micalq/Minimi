@@ -25,8 +25,10 @@ export default {
           this.res=res
           console.log(res);
         }) */
-        this.getUser()
+        if (this.$cookie.get("userId")) {//判断没登录不调用接口
+          this.getUser()
         this.getCartCount()
+        }
       },
       methods: {
         getUser(){//获取用户信息
