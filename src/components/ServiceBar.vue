@@ -25,7 +25,7 @@ export default {
    font-size: 16px;
       color: #666;
       padding: 33px 0;
-      background-color:#f11;
+      // background-color:#f11;
       ul{
         display: flex;
         li{

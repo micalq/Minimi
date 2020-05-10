@@ -40,8 +40,8 @@ axios.interceptors.response.use((response)=>{//接口错误拦截
     }
     return Promise.reject(res)
   }else{
-  // alert(res.msg);
-  this.$message.warning(res.msg)
+  alert(res.msg);
+  // this.$message.warning(res.msg)
   return Promise.reject(res)
   }
 },(error)=>{

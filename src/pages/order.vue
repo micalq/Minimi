@@ -1,10 +1,10 @@
 <template>
   <div>
-    <order-header :title="title">
+   <!--  <order-header :title="title">
         <template slot="tip">
             <span>{{subtitle}}</span>
         </template>
-    </order-header>
+    </order-header> -->
       <router-view></router-view>
       <service-bar></service-bar>
     <nav-footer>  </nav-footer>
@@ -22,12 +22,12 @@ export default {
     }
   },
     components: {
-      OrderHeader,
+      // OrderHeader,
       NavFooter,
       ServiceBar
     },
-    mounted() {
-      const path=this.$route.path;
+    mounted() {//只渲染一次不可以在这里判断
+      /* const path=this.$route.path;
     if (path=="/order/confirm") {
           this.title="订单确认"
           this.subtitle="请确认订单信息无误"
@@ -41,7 +41,7 @@ export default {
     else{
        this.title="订单支付"
           this.subtitle="谨防诈骗确认交易金额"
-    }
+    } */
     },
 }
 </script>

@@ -1,5 +1,10 @@
 <template >
   <div>
+      <order-header title="订单支付">
+      <template v-slot:tip>
+        <span>谨防诈骗确认交易金额</span>
+      </template>
+    </order-header>
     <div class="pay">
       <div class="container">
         <div class="info">
@@ -81,6 +86,7 @@
 import QRCode from "qrcode";
 import ScanPayCode from "../components/ScanPayCode";
 import Model from "../components/Model";
+import OrderHeader from './../components/OrderHeader'
 export default {
   data() {
     return {
@@ -165,7 +171,8 @@ export default {
   },
   components: {
     ScanPayCode,
-    Model
+    Model,
+    OrderHeader
   }
 };
 </script>
