@@ -27,7 +27,7 @@
           <div class="btn-group" v-if="btnType=='3'">
             <!-- $emit相当于jq中的trigger事件，只不过是用子组件来触发父组件的方法。所以里面的this是父组件。 -->
             <a href="javascript:;" class="btn" @click="$emit('submit')">{{sureText}}</a>
-            <a href="javascript:;" class="btn" @click="$emit('cacel')">{{cancelText}}</a>
+            <a href="javascript:;" class="btn btn-default" @click="$emit('cacel')">{{cancelText}}</a>
           </div>
         </div>
       </div>

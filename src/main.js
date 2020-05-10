@@ -44,6 +44,11 @@ axios.interceptors.response.use((response)=>{//接口错误拦截
   this.$message.warning(res.msg)
   return Promise.reject(res)
   }
+},(error)=>{
+      let res=error.response;
+      // this.$message.error("该笔订单已完成支付");
+     alert(res.data.message)
+      return Promise.reject(res)
 })
 new Vue({
   router,

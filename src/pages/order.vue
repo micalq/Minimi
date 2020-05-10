@@ -38,6 +38,10 @@ export default {
          this.title="订单支付"
           this.subtitle="谨防诈骗确认交易金额"
     }
+    else{
+       this.title="订单支付"
+          this.subtitle="谨防诈骗确认交易金额"
+    }
     },
 }
 </script>
